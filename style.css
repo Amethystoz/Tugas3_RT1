@@ -1,0 +1,117 @@
+/* Warna Utama */
+:root {
+    --warna-latar-utama: #121212; /* Hitam gelap */
+    --warna-aksen-ungu: #BB86FC; /* Ungu terang untuk aksen */
+    --warna-teks-terang: #E0E0E0; /* Teks abu-abu terang */
+    --warna-teks-sekunder: #A0A0A0; /* Teks sekunder */
+    --warna-ungu-gelap: #4A148C; /* Ungu untuk latar belakang elemen */
+}
+
+/* Reset dan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--warna-latar-utama);
+    color: var(--warna-teks-terang);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--warna-aksen-ungu);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: var(--warna-aksen-ungu);
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-style: italic;
+    color: var(--warna-teks-sekunder);
+}
+
+/* Grid Portofolio */
+.portfolio-grid {
+    display: grid;
+    /* Membuat layout 3 kolom di layar besar, 1 kolom di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Item Portofolio */
+.portfolio-item {
+    background-color: var(--warna-ungu-gelap); /* Latar belakang ungu gelap */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(187, 134, 252, 0.2); /* Efek bayangan ungu */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px; /* Tinggi foto yang seragam */
+    object-fit: cover; /* Memastikan foto mengisi kotak tanpa distorsi */
+    display: block;
+    border-bottom: 3px solid var(--warna-aksen-ungu);
+}
+
+.item-info {
+    padding: 15px;
+}
+
+.item-info h3 {
+    color: var(--warna-aksen-ungu);
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.item-info .alamat {
+    color: var(--warna-teks-sekunder);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    /* Memastikan alamat terlihat jelas di bawah nama proyek */
+}
+
+.item-info .deskripsi {
+    font-size: 1em;
+    color: var(--warna-teks-terang);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid var(--warna-teks-sekunder);
+    color: var(--warna-teks-sekunder);
+    font-size: 0.8em;
+}
+
+/* Responsif (untuk layar yang lebih kecil) */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk HP */
+    }
+}
